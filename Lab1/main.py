@@ -180,13 +180,14 @@ def show_country_info(factory: CountryFactory) -> None:
     anthem = factory.create_anthem()
     capital = factory.create_capital()
 
-    print("\nСимволика страны:")
-    print(f"Флаг: {flag.description()} {flag.emoji()}")
+    print("Символика страны:")
+    print(f"Флаг: {flag.description()}")
     print(f"Гимн: {anthem.title()}")
     print(
         "Столица: "
         f"{capital.name()} (население ≈ {capital.population():,} человек)".replace(",", " ")
     )
+    print("\n")
 
 
 def main() -> None:
@@ -199,5 +200,8 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    for name in COUNTRY_FACTORIES:
+        print(name)
+        factory = COUNTRY_FACTORIES[name]
+        show_country_info(factory)
 
