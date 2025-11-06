@@ -190,15 +190,6 @@ def show_country_info(factory: CountryFactory) -> None:
     print("\n")
 
 
-def main() -> None:
-    """Entry point for the console application."""
-
-    print("Демонстрация паттерна 'Абстрактная фабрика'.")
-    country_name = get_country_choice()
-    factory = COUNTRY_FACTORIES[country_name]
-    show_country_info(factory)
-
-
 if __name__ == "__main__":
     for name in COUNTRY_FACTORIES:
         print(name)
